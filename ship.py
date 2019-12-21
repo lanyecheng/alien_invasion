@@ -41,6 +41,10 @@ class Ship:
         # 根据 self.center 跟新 rect 对象
         self.rect.centerx = self.center
 
+    def chenter_ship(self):
+        """让飞船恢复到屏幕中央位置"""
+        self.center = self.screen_rect.centerx
+
     def blitme(self):
         """在指定位置绘制飞船"""
         self.screen.blit(self.image, self.rect)
