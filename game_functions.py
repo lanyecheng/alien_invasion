@@ -6,19 +6,32 @@ import sys
 import pygame
 
 
-def check_keydown_events(event, ship):
+
+def fire_bullet(ai_settings, screen, ship, bullets):
+    """未消失的子弹数小于设置值，才创建一颗子弹"""
+    # 并将其加入到编组bullets中,
+    if len(bullets) < ai_settings.bullet_allowed:
+        new_bullet = Bullet(ai_settings, screen, ship)
+        bullets.add(new_bullet)
+
+
+def check_keydown_events(event, ai_settings, screen, ship, bullets):
     """响应按键"""
     if event.key == pygame.K_RIGHT:
+        # 向右移动飞船
         ship.moving_right = True
     elif event.key == pygame.K_LEFT:
+        # 向左移动飞船
         ship.moving_left = True
 
 
 def check_keyup_events(event, ship):
     """响应按键松开"""
     if event.key == pygame.K_RIGHT:
+        # 松开右键
         ship.moving_right = False
     elif event.key == pygame.K_LEFT:
+        # 松开左键
         ship.moving_left = False
 
 
