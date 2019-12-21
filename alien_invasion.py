@@ -22,6 +22,9 @@ def run_game():
     bullets = Group()
     aliens = Group()
 
+    # 创建外星人群
+    gf.create_fleet(ai_settings, screen, ship, aliens)
+
     # 开始游戏的主循环
     while True:
         # 检查键盘
@@ -30,7 +33,7 @@ def run_game():
         ship.update()
         # 更新子弹位置
         gf.update_bullets(bullets)
-        gf.create_fleet(ai_settings, screen, ship, aliens)
+        gf.update_aliens(ai_settings, aliens)
         # 使用更新后的位置绘制屏幕
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
