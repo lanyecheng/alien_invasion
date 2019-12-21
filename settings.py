@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # author：albert time:2019/12/21
 
-class Settings():
+class Settings:
 
     def __init__(self):
 
