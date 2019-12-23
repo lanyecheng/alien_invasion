@@ -22,7 +22,7 @@ def run_game():
 
     play_button = Button(screen, 'Play')
 
-    # 创建一个用于存储游戏统计信息的实例
+    # 创建一个用于存储游戏统计信息的实例、并创建计分牌，放在屏幕的右上角
     stats = GameStats(ai_settings)
     sb = Scoreboard(ai_settings, screen, stats)
 
