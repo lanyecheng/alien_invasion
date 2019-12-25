@@ -21,6 +21,8 @@ class Settings:
         self.bullet_color = 60, 60, 60
         self.bullet_allowed = 5
 
+        self.score_name = 'score_high.txt'
+
         # 外星人设置
         self.fleet_drop_speed = 10
         # fleet_direction 为1表示向右移动，为-1表示向左移动
